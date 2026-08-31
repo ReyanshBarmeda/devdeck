@@ -1,0 +1,6 @@
+{
+  "name": "DevDeck - Enterprise Cloud CDE & Developer Control Plane",
+  "description": "Enterprise cloud development environments (CDE), workflow automation engine (Trigger Pipeline -> Run Test Suite -> Deploy if Passed), spot GPU cost arbitrage, WireGuard mesh topology & port tunnels, live distributed observability, IaC DevContainer generator, and collaborative live pairing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

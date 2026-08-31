@@ -1,0 +1,25 @@
+{
+  "appId": "com.devdeck.desktop",
+  "productName": "DevDeck",
+  "directories": {
+    "output": "dist_desktop"
+  },
+  "files": [
+    "dist/**/*",
+    "electron-main.cjs",
+    "package.json"
+  ],
+  "extraMetadata": {
+    "main": "electron-main.cjs"
+  },
+  "mac": {
+    "category": "public.app-category.developer-tools"
+  },
+  "win": {
+    "target": "nsis"
+  },
+  "linux": {
+    "target": "AppImage",
+    "category": "Development"
+  }
+}

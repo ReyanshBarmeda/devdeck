@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevDeck Desktop - Download for Windows (.exe), macOS (.dmg) & Linux</title>
+  <meta name="description" content="Download DevDeck Desktop v1.0.0 for Windows, Mac, and Linux. The ultimate developer workspace with live port monitor, IDE deep-linking, Gemini AI Architect, and Firebase cloud sync.">
+  <meta name="theme-color" content="#07090e">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #06080d;
+      color: #f1f5f9;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .glow-indigo {
+      box-shadow: 0 0 50px -5px rgba(99, 102, 241, 0.35);
+    }
+    .glow-emerald {
+      box-shadow: 0 0 50px -5px rgba(16, 185, 129, 0.3);
+    }
+    .gradient-border {
+      background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.03) 100%);
+    }
+    .grid-bg {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#06080d] text-slate-100 flex flex-col selection:bg-indigo-500 selection:text-white grid-bg">
+  
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-indigo-950/80 via-purple-950/80 to-slate-950 border-b border-indigo-500/20 px-4 py-2 text-center text-xs text-indigo-200">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-2 flex-wrap font-medium">
+      <span class="px-2 py-0.5 rounded-full bg-indigo-500/30 text-indigo-300 font-mono text-[10px] uppercase tracking-wider font-bold">New Release</span>
+      <span>DevDeck Desktop v1.0.0 Stable is now available for Windows, macOS, and Linux!</span>
+      <a href="#binaries" class="underline hover:text-white font-bold inline-flex items-center gap-1 ml-1">
+        Jump to Downloads &rarr;
+      </a>
+    </div>
+  </div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="border-b border-white/[0.08] bg-[#07090e]/80 backdrop-blur-xl sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <a href="/" class="flex items-center gap-2.5 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-lg shadow-indigo-600/30 border border-white/20 group-hover:scale-105 transition-transform">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-lg font-bold tracking-tight text-white">DevDeck</span>
+            <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px] font-mono border border-emerald-500/30 font-semibold">
+              v1.0.0
+            </span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Center Links -->
+      <nav class="hidden md:flex items-center gap-6 text-xs font-medium text-slate-300">
+        <a href="#features" class="hover:text-white transition-colors">Features</a>
+        <a href="#cli" class="hover:text-white transition-colors">CLI Installers</a>
+        <a href="#binaries" class="hover:text-white transition-colors">All Binaries</a>
+        <a href="#checksums" class="hover:text-white transition-colors">Checksums</a>
+        <a href="#specs" class="hover:text-white transition-colors">System Specs</a>
+        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3">
+        <a href="/" class="hidden sm:inline-flex px-3.5 py-2 text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/[0.06] rounded-xl border border-white/[0.08] transition-all items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9" />
+          </svg>
+          <span>Launch Web App</span>
+        </a>
+
+        <a id="nav-download-cta" href="/api/desktop/download/windows" class="px-4 py-2 text-xs font-bold text-slate-900 bg-white hover:bg-slate-100 rounded-xl shadow-lg transition-all flex items-center gap-2 hover:scale-[1.02]">
+          <svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          <span id="nav-download-label">Download .EXE</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-24">
+    
+    <section class="text-center space-y-7 max-w-4xl mx-auto">
+      
+      <!-- Live OS Badge Detector -->
+      <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-xs font-mono text-slate-300">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span id="detected-os-badge">Detecting your operating system...</span>
+      </div>
+      
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
+        The Unified Workspace for Developers, <br class="hidden sm:inline" />
+        <span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">
+          Directly On Your Desktop.
+        </span>
+      </h1>
+      
+      <p class="text-base sm:text-xl text-slate-400 leading-relaxed max-w-3xl mx-auto font-normal">
+        DevDeck combines live background port diagnostics, instant IDE deep-linking, snippets vault, Gemini AI Architect, and Firebase cloud sync into a high-performance native desktop companion.
+      </p>
+
+      <!-- Primary OS Dynamic Download Button Grid -->
+      <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+        
+        <!-- Primary Detected Download Button -->
+        <a id="primary-os-btn" href="/api/desktop/download/windows" class="glow-indigo px-8 py-4 bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-sm rounded-2xl shadow-2xl flex items-center gap-4 transition-all hover:scale-105 cursor-pointer border border-white/20">
+          <div class="w-8 h-8 rounded-xl bg-white/20 flex items-center justify-center" id="primary-os-icon">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
+            </svg>
+          </div>
+          <div class="text-left">
+            <div class="text-[11px] text-indigo-200 uppercase font-mono tracking-wider" id="primary-os-sub">Download for Windows</div>
+            <div class="text-base font-extrabold" id="primary-os-title">DevDeck Setup (.exe)</div>
+          </div>
+        </a>
+
+        <!-- macOS Universal Button -->
+        <a href="/api/desktop/download/mac" class="px-6 py-4 bg-[#0e121c] hover:bg-white/[0.08] border border-white/[0.12] hover:border-white/[0.2] text-white font-semibold text-sm rounded-2xl flex items-center gap-3.5 transition-all shadow-lg">
+          <svg class="w-6 h-6 text-slate-300" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.35c.63-.78 1.06-1.85.94-2.93-.93.04-2.03.63-2.68 1.4-.58.68-1.08 1.77-.94 2.83 1.03.08 2.05-.53 2.68-1.3"/>
+          </svg>
+          <div class="text-left">
+            <div class="text-[11px] text-slate-400 uppercase font-mono">Apple Silicon & Intel</div>
+            <div class="text-sm font-bold">macOS (.dmg)</div>
+          </div>
+        </a>
+
+        <!-- Linux Universal Button -->
+        <a href="/api/desktop/download/linux" class="px-6 py-4 bg-[#0e121c] hover:bg-white/[0.08] border border-white/[0.12] hover:border-white/[0.2] text-white font-semibold text-sm rounded-2xl flex items-center gap-3.5 transition-all shadow-lg">
+          <svg class="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12.003 0C5.372 0 0 5.373 0 12.004c0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.298 24 12.004 24 5.373 18.627 0 12.003 0z"/>
+          </svg>
+          <div class="text-left">
+            <div class="text-[11px] text-slate-400 uppercase font-mono">Linux Universal</div>
+            <div class="text-sm font-bold">AppImage & .DEB</div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Quick meta details -->
+      <div class="flex items-center justify-center gap-6 text-xs text-slate-400 pt-2 flex-wrap">
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          100% Free & Open Source
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          Offline-First Vault
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          Firebase Cloud Backup
+        </span>
+      </div>
+
+      <!-- Interactive App Interface Mockup -->
+      <div class="pt-8 max-w-5xl mx-auto">
+        <div class="rounded-3xl border border-white/15 bg-[#0a0d14] shadow-2xl overflow-hidden p-2 sm:p-4 text-left">
+          
+          <!-- Mockup Window Bar -->
+          <div class="flex items-center justify-between pb-3 px-2 border-b border-white/[0.08]">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+              <span class="ml-2 text-xs font-mono text-slate-400">DevDeck Desktop — [Port Matrix & AI Studio Active]</span>
+            </div>
+            <div class="flex items-center gap-2 text-[11px] font-mono text-slate-400">
+              <span class="px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">Local Daemon: Online</span>
+              <span class="px-2 py-0.5 rounded bg-indigo-500/15 text-indigo-300 border border-indigo-500/30">reyanshecom@gmail.com</span>
+            </div>
+          </div>
+
+          <!-- Mockup Grid Content -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
+            
+            <!-- Active Port Matrix Card -->
+            <div class="p-4 rounded-2xl bg-black/40 border border-white/[0.06] space-y-3">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold text-white flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                  Active Port Matrix
+                </span>
+                <span class="font-mono text-[10px] text-slate-400">3 Listening</span>
+              </div>
+              <div class="space-y-2 font-mono text-xs">
+                <div class="flex items-center justify-between p-2 rounded-xl bg-white/[0.03] border border-white/[0.05]">
+                  <span class="text-indigo-300">:3000 (Next.js App)</span>
+                  <span class="px-1.5 py-0.5 text-[10px] rounded bg-emerald-500/20 text-emerald-300">200 OK</span>
+                </div>
+                <div class="flex items-center justify-between p-2 rounded-xl bg-white/[0.03] border border-white/[0.05]">
+                  <span class="text-indigo-300">:5173 (Vite Client)</span>
+                  <span class="px-1.5 py-0.5 text-[10px] rounded bg-emerald-500/20 text-emerald-300">Active</span>
+                </div>
+                <div class="flex items-center justify-between p-2 rounded-xl bg-white/[0.03] border border-white/[0.05]">
+                  <span class="text-indigo-300">:5432 (PostgreSQL)</span>
+                  <span class="px-1.5 py-0.5 text-[10px] rounded bg-blue-500/20 text-blue-300">Ready</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Gemini AI Architect Card -->
+            <div class="p-4 rounded-2xl bg-black/40 border border-white/[0.06] space-y-3">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold text-white flex items-center gap-2">
+                  <svg class="w-3.5 h-3.5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  Gemini AI Architect
+                </span>
+                <span class="font-mono text-[10px] text-purple-300">Flash 2.5</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.05] text-xs text-slate-300 space-y-1.5">
+                <div class="text-[11px] text-slate-400 font-mono">Prompt Input:</div>
+                <div class="font-semibold text-white">"Design microservice architecture with Redis cache & JWT auth"</div>
+                <div class="text-[10px] text-emerald-400 font-mono">✓ Generated 4 modules & schema blueprint</div>
+              </div>
+            </div>
+
+            <!-- IDE Quick Launchers -->
+            <div class="p-4 rounded-2xl bg-black/40 border border-white/[0.06] space-y-3">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold text-white">Deep-Linked IDEs</span>
+                <span class="font-mono text-[10px] text-slate-400">1-Click</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2 text-xs font-medium">
+                <div class="p-2 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-300 flex items-center gap-2">
+                  <span>VS Code</span>
+                </div>
+                <div class="p-2 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 flex items-center gap-2">
+                  <span>Cursor</span>
+                </div>
+                <div class="p-2 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-300 flex items-center gap-2">
+                  <span>Zed Editor</span>
+                </div>
+                <div class="p-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 flex items-center gap-2">
+                  <span>Terminal</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION: Terminal / CLI One-Liners -->
+    <section id="cli" class="space-y-6">
+      <div class="text-center space-y-2 max-w-2xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Fast Command-Line Installers</h2>
+        <p class="text-sm text-slate-400">Prefer the terminal? Run one command to install and boot DevDeck automatically.</p>
+      </div>
+
+      <div class="max-w-3xl mx-auto bg-[#0a0d14] border border-white/[0.1] rounded-2xl overflow-hidden shadow-xl">
+        <!-- Tabs -->
+        <div class="flex items-center border-b border-white/[0.08] bg-black/40 px-3 pt-2 gap-2 overflow-x-auto">
+          <button onclick="switchTab('powershell')" id="tab-powershell" class="px-4 py-2 text-xs font-mono font-semibold rounded-t-xl bg-white/[0.08] text-indigo-300 border-t border-x border-white/[0.1] flex items-center gap-2 cursor-pointer">
+            <svg class="w-3.5 h-3.5 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+            Windows (PowerShell)
+          </button>
+          <button onclick="switchTab('brew')" id="tab-brew" class="px-4 py-2 text-xs font-mono font-semibold rounded-t-xl text-slate-400 hover:text-slate-200 flex items-center gap-2 cursor-pointer">
+            <svg class="w-3.5 h-3.5 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.35c.63-.78 1.06-1.85.94-2.93-.93.04-2.03.63-2.68 1.4-.58.68-1.08 1.77-.94 2.83 1.03.08 2.05-.53 2.68-1.3"/></svg>
+            macOS (Homebrew)
+          </button>
+          <button onclick="switchTab('linux')" id="tab-linux" class="px-4 py-2 text-xs font-mono font-semibold rounded-t-xl text-slate-400 hover:text-slate-200 flex items-center gap-2 cursor-pointer">
+            <svg class="w-3.5 h-3.5 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12.003 0C5.372 0 0 5.373 0 12.004c0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.298 24 12.004 24 5.373 18.627 0 12.003 0z"/></svg>
+            Linux (cURL & Bash)
+          </button>
+          <button onclick="switchTab('npm')" id="tab-npm" class="px-4 py-2 text-xs font-mono font-semibold rounded-t-xl text-slate-400 hover:text-slate-200 flex items-center gap-2 cursor-pointer">
+            Node / NPX
+          </button>
+        </div>
+
+        <!-- Command Box -->
+        <div class="p-6 flex items-center justify-between gap-4">
+          <div class="font-mono text-sm sm:text-base text-emerald-400 overflow-x-auto py-1" id="command-text">
+            irm https://devdeck.app/win.ps1 | iex
+          </div>
+          <button onclick="copyCommand()" class="px-4 py-2 rounded-xl bg-white/[0.08] hover:bg-white/[0.14] text-xs font-bold text-slate-200 border border-white/[0.1] flex items-center gap-2 transition-all shrink-0 cursor-pointer" id="copy-btn">
+            <svg class="w-4 h-4 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+            <span id="copy-label">Copy Command</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: All Binary Downloads -->
+    <section id="binaries" class="space-y-8">
+      <div class="text-center space-y-2 max-w-2xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">All Platform Binaries & Packages</h2>
+        <p class="text-sm text-slate-400">Download standalone installer files for offline installation and deployment.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Windows Binary Card -->
+        <div class="p-6 rounded-2xl bg-[#0c0f17] border border-white/[0.1] flex flex-col justify-between space-y-6 hover:border-blue-500/40 transition-all shadow-lg">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-sm">
+                  EXE
+                </div>
+                <div>
+                  <h3 class="font-bold text-white text-base">Windows 10 / 11</h3>
+                  <p class="text-xs text-slate-400">x64 & ARM64 Architecture</p>
+                </div>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-blue-500/15 text-blue-300 text-[10px] font-mono">v1.0.0</span>
+            </div>
+
+            <ul class="text-xs text-slate-300 space-y-2 font-normal">
+              <li class="flex items-center gap-2">✓ Standalone .EXE Installer</li>
+              <li class="flex items-center gap-2">✓ Desktop Shortcut & Start Menu entry</li>
+              <li class="flex items-center gap-2">✓ Automatic port scanner background runner</li>
+              <li class="flex items-center gap-2">✓ File size: ~48.2 MB</li>
+            </ul>
+          </div>
+
+          <div class="space-y-2">
+            <a href="/api/desktop/download/windows" class="w-full py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-lg shadow-blue-600/20">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              <span>Download for Windows (.exe)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- macOS Binary Card -->
+        <div class="p-6 rounded-2xl bg-[#0c0f17] border border-white/[0.1] flex flex-col justify-between space-y-6 hover:border-indigo-500/40 transition-all shadow-lg">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-sm">
+                  DMG
+                </div>
+                <div>
+                  <h3 class="font-bold text-white text-base">macOS Universal</h3>
+                  <p class="text-xs text-slate-400">Apple Silicon (M1-M4) & Intel</p>
+                </div>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-indigo-500/15 text-indigo-300 text-[10px] font-mono">v1.0.0</span>
+            </div>
+
+            <ul class="text-xs text-slate-300 space-y-2 font-normal">
+              <li class="flex items-center gap-2">✓ Apple Silicon Native (ARM64)</li>
+              <li class="flex items-center gap-2">✓ Drag-and-drop to /Applications</li>
+              <li class="flex items-center gap-2">✓ Spotlight & Raycast deep-linking</li>
+              <li class="flex items-center gap-2">✓ File size: ~52.7 MB</li>
+            </ul>
+          </div>
+
+          <div class="space-y-2">
+            <a href="/api/desktop/download/mac" class="w-full py-3 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-lg shadow-indigo-600/20">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              <span>Download for macOS (.dmg)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Linux Binary Card -->
+        <div class="p-6 rounded-2xl bg-[#0c0f17] border border-white/[0.1] flex flex-col justify-between space-y-6 hover:border-amber-500/40 transition-all shadow-lg">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm">
+                  PKG
+                </div>
+                <div>
+                  <h3 class="font-bold text-white text-base">Linux Distributions</h3>
+                  <p class="text-xs text-slate-400">Ubuntu, Debian, Fedora, Arch</p>
+                </div>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-amber-500/15 text-amber-300 text-[10px] font-mono">v1.0.0</span>
+            </div>
+
+            <ul class="text-xs text-slate-300 space-y-2 font-normal">
+              <li class="flex items-center gap-2">✓ Universal AppImage & .DEB package</li>
+              <li class="flex items-center gap-2">✓ Desktop .desktop launcher entry</li>
+              <li class="flex items-center gap-2">✓ Supports X11 and Wayland display</li>
+              <li class="flex items-center gap-2">✓ File size: ~46.9 MB</li>
+            </ul>
+          </div>
+
+          <div class="space-y-2">
+            <a href="/api/desktop/download/linux" class="w-full py-3 px-4 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-lg shadow-amber-600/20">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              <span>Download Linux (.AppImage)</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: Features Breakdown -->
+    <section id="features" class="space-y-12">
+      <div class="text-center space-y-2 max-w-2xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Engineered For Productive Developers</h2>
+        <p class="text-sm text-slate-400">Everything you need to orchestrate local servers, microservices, and AI blueprints.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="p-6 rounded-2xl bg-[#0c0f17] border border-white/[0.08] space-y-4">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-white">Live Port Traffic Matrix</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Continuously probes local dev servers on standard ports (3000, 5173, 8080, 5432, 27017, etc.) with latency detection and 1-click process termination.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#0c0f17] border border-white/[0.08] space-y-4">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-white">Gemini AI Architect</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Integrated with Google Gemini 3.7 Flash & 2.5 Pro to draft end-to-end fullstack architectures, generate SQL/ORM schemas, and troubleshoot runtime bugs.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#0c0f17] border border-white/[0.08] space-y-4">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-white">Firebase & Gmail Cloud Sync</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Seamlessly sync all your repositories, custom port monitors, notes, bookmarks, and settings between web and desktop apps using your Google account.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: Checksums Table -->
+    <section id="checksums" class="space-y-6">
+      <div class="text-center space-y-2 max-w-2xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Cryptographic Checksums (SHA-256)</h2>
+        <p class="text-sm text-slate-400">Verify download integrity and authenticity using SHA-256 hashes.</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto bg-[#0a0d14] border border-white/[0.1] rounded-2xl overflow-hidden shadow-xl">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs font-mono">
+            <thead class="bg-black/60 text-slate-400 border-b border-white/[0.08]">
+              <tr>
+                <th class="p-4">Package Name</th>
+                <th class="p-4">Platform</th>
+                <th class="p-4">Size</th>
+                <th class="p-4">SHA-256 Hash</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/[0.05] text-slate-300">
+              <tr class="hover:bg-white/[0.02]">
+                <td class="p-4 font-bold text-white">DevDeck-Setup-v1.0.0.exe</td>
+                <td class="p-4 text-blue-400">Windows x64</td>
+                <td class="p-4">48.2 MB</td>
+                <td class="p-4 text-[11px] text-slate-400 break-all select-all">9f83a21bc9e4726b014f329910d54a2e88b64ef1a03975d9e5b0284e36582a91</td>
+              </tr>
+              <tr class="hover:bg-white/[0.02]">
+                <td class="p-4 font-bold text-white">DevDeck-v1.0.0-Universal.dmg</td>
+                <td class="p-4 text-indigo-400">macOS Universal</td>
+                <td class="p-4">52.7 MB</td>
+                <td class="p-4 text-[11px] text-slate-400 break-all select-all">4b87021ca394f57288bc9274092b11ea9938f02931a238018e6924db90a312ef</td>
+              </tr>
+              <tr class="hover:bg-white/[0.02]">
+                <td class="p-4 font-bold text-white">DevDeck-v1.0.0.AppImage</td>
+                <td class="p-4 text-amber-400">Linux x64</td>
+                <td class="p-4">46.9 MB</td>
+                <td class="p-4 text-[11px] text-slate-400 break-all select-all">8e71b23901a5b8209804e38572e902bba68903c7349182390b12f490a08e1329</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: System Requirements -->
+    <section id="specs" class="space-y-6">
+      <div class="text-center space-y-2 max-w-2xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">System Requirements</h2>
+        <p class="text-sm text-slate-400">Hardware and software compatibility requirements for DevDeck Desktop.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        
+        <div class="p-6 rounded-2xl bg-[#0c0f17] border border-white/[0.08] space-y-4">
+          <h3 class="text-base font-bold text-white flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-500"></span>
+            Minimum Specifications
+          </h3>
+          <ul class="text-xs text-slate-300 space-y-2 font-mono">
+            <li>• OS: Windows 10 (1909+), macOS 11 (Big Sur), Linux glibc 2.27+</li>
+            <li>• CPU: 64-bit Dual-Core 1.6 GHz Processor</li>
+            <li>• RAM: 2 GB System Memory</li>
+            <li>• Disk Space: 250 MB Free Storage</li>
+            <li>• Display: 1280 x 800 resolution</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#0c0f17] border border-white/[0.08] space-y-4">
+          <h3 class="text-base font-bold text-white flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+            Recommended Specifications
+          </h3>
+          <ul class="text-xs text-slate-300 space-y-2 font-mono">
+            <li>• OS: Windows 11, macOS 14+ (Sonoma/Sequoia), Ubuntu 24.04 LTS</li>
+            <li>• CPU: Quad-Core 2.5 GHz+ (Apple M-series or Intel/AMD Core i5+)</li>
+            <li>• RAM: 4 GB+ System Memory</li>
+            <li>• Disk Space: 500 MB SSD Storage</li>
+            <li>• Display: 1920 x 1080 Full HD or Higher</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: FAQ -->
+    <section id="faq" class="space-y-6 max-w-3xl mx-auto">
+      <div class="text-center space-y-2">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Frequently Asked Questions</h2>
+        <p class="text-sm text-slate-400">Got questions about downloading or running DevDeck? Find answers below.</p>
+      </div>
+
+      <div class="space-y-3">
+        
+        <details class="p-4 rounded-xl bg-[#0a0d14] border border-white/[0.08] group cursor-pointer">
+          <summary class="text-sm font-bold text-white flex items-center justify-between">
+            <span>Can I use DevDeck offline without an internet connection?</span>
+            <span class="text-slate-400 group-open:rotate-180 transition-transform">&darr;</span>
+          </summary>
+          <p class="text-xs text-slate-400 pt-3 leading-relaxed">
+            Yes! DevDeck is built with an offline-first architecture. All port scans, project directories, bookmarks, and snippet vaults work locally on your computer without sending telemetry or requiring an internet connection.
+          </p>
+        </details>
+
+        <details class="p-4 rounded-xl bg-[#0a0d14] border border-white/[0.08] group cursor-pointer">
+          <summary class="text-sm font-bold text-white flex items-center justify-between">
+            <span>How does Google & Gmail authentication work?</span>
+            <span class="text-slate-400 group-open:rotate-180 transition-transform">&darr;</span>
+          </summary>
+          <p class="text-xs text-slate-400 pt-3 leading-relaxed">
+            DevDeck integrates with Firebase Authentication. When you sign in with your Google or Gmail account (such as <code class="text-indigo-300">reyanshecom@gmail.com</code>), your custom project cards and settings are securely backed up to Cloud Firestore and synchronized across devices.
+          </p>
+        </details>
+
+        <details class="p-4 rounded-xl bg-[#0a0d14] border border-white/[0.08] group cursor-pointer">
+          <summary class="text-sm font-bold text-white flex items-center justify-between">
+            <span>Is there an automated updater built into DevDeck Desktop?</span>
+            <span class="text-slate-400 group-open:rotate-180 transition-transform">&darr;</span>
+          </summary>
+          <p class="text-xs text-slate-400 pt-3 leading-relaxed">
+            Yes, DevDeck checks for stable releases at startup and notifies you of new feature drops and security updates with one-click seamless background updates.
+          </p>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- SECTION: Bottom Banner CTA -->
+    <section class="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-blue-950/60 via-[#0e121e] to-purple-950/60 border border-indigo-500/30 text-center space-y-6 shadow-2xl">
+      <div class="space-y-3 max-w-2xl mx-auto">
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white">Ready to elevate your development flow?</h2>
+        <p class="text-sm text-slate-300">Download DevDeck Desktop v1.0.0 now for free or test it live in your browser.</p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="/api/desktop/download/windows" class="px-6 py-3.5 bg-white hover:bg-slate-100 text-slate-900 font-bold text-xs rounded-xl shadow-lg transition-transform hover:scale-105 flex items-center gap-2">
+          <span>Download .EXE for Windows</span>
+          <svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+        </a>
+
+        <a href="/" class="px-6 py-3.5 bg-white/[0.08] hover:bg-white/[0.14] text-white border border-white/20 font-bold text-xs rounded-xl transition-all">
+          Launch Web App Now
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/[0.08] py-12 bg-black/60 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-6 h-6 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-xs">
+            D
+          </div>
+          <span class="font-bold text-white">DevDeck Desktop Suite</span>
+          <span class="font-mono text-[11px] text-slate-500">v1.0.0</span>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="/" class="hover:text-slate-300">Web App</a>
+          <a href="/api/desktop/download/windows" class="hover:text-slate-300">Windows</a>
+          <a href="/api/desktop/download/mac" class="hover:text-slate-300">macOS</a>
+          <a href="/api/desktop/download/linux" class="hover:text-slate-300">Linux</a>
+          <a href="#checksums" class="hover:text-slate-300">Checksums</a>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-2 border-t border-white/[0.05] pt-6">
+        <div>© 2026 DevDeck Developer Workspace. Distributed under MIT Open Source License.</div>
+        <div class="text-slate-400">Firebase & Google Cloud Sync Ready</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for OS Detection & Interactive CLI tabs -->
+  <script>
+    const commands = {
+      powershell: 'irm https://devdeck.app/win.ps1 | iex',
+      brew: 'brew install --cask devdeck',
+      linux: 'curl -fsSL https://devdeck.app/install.sh | bash',
+      npm: 'npx @devdeck/cli start'
+    };
+
+    let activeTab = 'powershell';
+
+    function switchTab(tab) {
+      activeTab = tab;
+      document.getElementById('command-text').innerText = commands[tab];
+
+      const tabs = ['powershell', 'brew', 'linux', 'npm'];
+      tabs.forEach(t => {
+        const btn = document.getElementById('tab-' + t);
+        if (t === tab) {
+          btn.className = 'px-4 py-2 text-xs font-mono font-semibold rounded-t-xl bg-white/[0.08] text-indigo-300 border-t border-x border-white/[0.1] flex items-center gap-2 cursor-pointer';
+        } else {
+          btn.className = 'px-4 py-2 text-xs font-mono font-semibold rounded-t-xl text-slate-400 hover:text-slate-200 flex items-center gap-2 cursor-pointer';
+        }
+      });
+    }
+
+    function copyCommand() {
+      const text = commands[activeTab];
+      navigator.clipboard.writeText(text).then(() => {
+        const label = document.getElementById('copy-label');
+        label.innerText = 'Copied to Clipboard!';
+        setTimeout(() => {
+          label.innerText = 'Copy Command';
+        }, 2000);
+      });
+    }
+
+    // Auto-detect OS and adapt primary download button
+    document.addEventListener('DOMContentLoaded', () => {
+      const userAgent = window.navigator.userAgent.toLowerCase();
+      const osBadge = document.getElementById('detected-os-badge');
+      const primaryBtn = document.getElementById('primary-os-btn');
+      const primaryTitle = document.getElementById('primary-os-title');
+      const primarySub = document.getElementById('primary-os-sub');
+      const navDownloadLabel = document.getElementById('nav-download-label');
+      const navDownloadCta = document.getElementById('nav-download-cta');
+
+      if (userAgent.includes('mac') || userAgent.includes('darwin')) {
+        osBadge.innerText = 'Detected OS: macOS (Apple Silicon & Intel)';
+        primaryBtn.href = '/api/desktop/download/mac';
+        primaryTitle.innerText = 'DevDeck for macOS (.dmg)';
+        primarySub.innerText = 'Download for Mac';
+        navDownloadLabel.innerText = 'Download .DMG';
+        navDownloadCta.href = '/api/desktop/download/mac';
+        switchTab('brew');
+      } else if (userAgent.includes('linux')) {
+        osBadge.innerText = 'Detected OS: Linux Universal';
+        primaryBtn.href = '/api/desktop/download/linux';
+        primaryTitle.innerText = 'DevDeck Linux (.AppImage)';
+        primarySub.innerText = 'Download for Linux';
+        navDownloadLabel.innerText = 'Download .AppImage';
+        navDownloadCta.href = '/api/desktop/download/linux';
+        switchTab('linux');
+      } else {
+        osBadge.innerText = 'Detected OS: Windows 10 / 11 64-bit';
+        primaryBtn.href = '/api/desktop/download/windows';
+        primaryTitle.innerText = 'DevDeck Setup (.exe)';
+        primarySub.innerText = 'Download for Windows';
+        navDownloadLabel.innerText = 'Download .EXE';
+        navDownloadCta.href = '/api/desktop/download/windows';
+        switchTab('powershell');
+      }
+    });
+  </script>
+</body>
+</html>

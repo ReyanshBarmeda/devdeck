@@ -1,0 +1,508 @@
+@import "tailwindcss";
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+@layer base {
+  :root {
+    --theme-bg: #09090b;
+    --theme-card: #18181b;
+    --theme-border: rgba(255, 255, 255, 0.08);
+    --theme-text: #fafafa;
+    --theme-text-muted: #94a3b8;
+    --theme-accent: #3b82f6;
+    --theme-radius: 12px;
+  }
+
+  .light-theme {
+    --theme-border: rgba(0, 0, 0, 0.12);
+    --theme-text: #0f172a;
+    --theme-text-muted: #475569;
+  }
+
+  * {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
+  }
+
+  html, body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "SF Pro Rounded", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    letter-spacing: -0.012em;
+  }
+
+  html[data-density="compact"] {
+    font-size: 14px;
+  }
+
+  html[data-density="comfortable"] {
+    font-size: 16px;
+  }
+
+  html[data-density="spacious"] {
+    font-size: 18px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: -0.025em;
+  }
+
+  p, span, div, button, input, textarea, select {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  
+  code, pre, .font-mono {
+    font-family: "SF Mono", "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, "JetBrains Mono", monospace !important;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* =========================================================================
+   COMPREHENSIVE LIGHT THEME CONTRAST & LEGIBILITY ENGINE
+   Forces crisp, deep dark / black text and proper elevated card surfaces
+   whenever any Light theme is active.
+   ========================================================================= */
+
+.light-theme {
+  color: #0f172a !important;
+}
+
+/* Global text overrides for light mode */
+.light-theme .text-white,
+.light-theme .text-slate-100,
+.light-theme .text-slate-200,
+.light-theme .text-zinc-100,
+.light-theme .text-zinc-200,
+.light-theme .text-gray-100,
+.light-theme .text-gray-200 {
+  color: #0f172a !important;
+}
+
+.light-theme .text-slate-300,
+.light-theme .text-slate-400,
+.light-theme .text-zinc-300,
+.light-theme .text-zinc-400,
+.light-theme .text-gray-300,
+.light-theme .text-gray-400 {
+  color: #334155 !important;
+}
+
+.light-theme .text-slate-500,
+.light-theme .text-zinc-500,
+.light-theme .text-gray-500 {
+  color: #64748b !important;
+}
+
+/* Navbar in light mode */
+.light-theme header {
+  background-color: rgba(255, 255, 255, 0.88) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-theme header h1 {
+  color: #0f172a !important;
+}
+
+/* Sidebar in light mode */
+.light-theme aside {
+  background-color: rgba(255, 255, 255, 0.82) !important;
+  border-right-color: rgba(0, 0, 0, 0.09) !important;
+}
+
+.light-theme aside button {
+  color: #334155 !important;
+}
+
+.light-theme aside button:hover {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+  color: #0f172a !important;
+}
+
+.light-theme aside button.font-semibold,
+.light-theme aside button[class*="bg-gradient-to-r"] {
+  background: rgba(59, 130, 246, 0.1) !important;
+  color: #2563eb !important;
+  border-color: rgba(59, 130, 246, 0.25) !important;
+}
+
+/* Inputs, textareas & searches in light mode */
+.light-theme input,
+.light-theme textarea,
+.light-theme select {
+  color: #0f172a !important;
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+.light-theme input::placeholder,
+.light-theme textarea::placeholder {
+  color: #64748b !important;
+}
+
+/* Borders & dark background patches in light mode */
+.light-theme .border-white\/\[0\.08\],
+.light-theme .border-white\/\[0\.07\],
+.light-theme .border-white\/\[0\.06\],
+.light-theme .border-white\/\[0\.1\],
+.light-theme .border-white\/\[0\.12\],
+.light-theme .border-white\/10,
+.light-theme .border-white\/20 {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-theme .bg-white\/\[0\.02\],
+.light-theme .bg-white\/\[0\.03\],
+.light-theme .bg-white\/\[0\.04\],
+.light-theme .bg-white\/\[0\.05\],
+.light-theme .bg-white\/\[0\.06\],
+.light-theme .bg-white\/\[0\.08\],
+.light-theme .bg-white\/\[0\.1\] {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.light-theme .bg-black\/20,
+.light-theme .bg-black\/25,
+.light-theme .bg-black\/30,
+.light-theme .bg-black\/40 {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.light-theme .bg-black\/20 *,
+.light-theme .bg-black\/25 *,
+.light-theme .bg-black\/30 *,
+.light-theme .bg-black\/40 * {
+  color: #1e293b;
+}
+
+/* Modals & Dialogs in light mode */
+.light-theme .bg-\[\#0c0f17\],
+.light-theme .bg-\[\#0e121a\],
+.light-theme .bg-\[\#070a0f\],
+.light-theme .bg-\[\#080b11\],
+.light-theme .bg-slate-900,
+.light-theme .bg-zinc-900,
+.light-theme .bg-slate-950 {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+.light-theme .bg-slate-950\/50 {
+  background-color: #f8fafc !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Dropdown popups in light mode */
+.light-theme [class*="shadow-2xl"][class*="rounded-xl"],
+.light-theme [class*="shadow-2xl"][class*="rounded-2xl"] {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  color: #0f172a !important;
+}
+
+/* Keep accent buttons & primary CTA readable with white text */
+.light-theme .aesthetic-button-primary,
+.light-theme .aesthetic-button-primary *,
+.light-theme button.bg-blue-600,
+.light-theme .bg-gradient-to-tr,
+.light-theme [style*="backgroundColor: rgb(59, 130, 246)"],
+.light-theme [style*="background-color: rgb(59, 130, 246)"] {
+  color: #ffffff !important;
+}
+
+/* Aesthetic Clean & High-Performance Card Surfaces */
+.aesthetic-card {
+  background-color: var(--theme-card, #18181b);
+  border: 1px solid var(--theme-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--theme-radius, 12px);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.light-theme .aesthetic-card {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04) !important;
+  color: #0f172a !important;
+}
+
+.aesthetic-card:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.light-theme .aesthetic-card:hover {
+  border-color: rgba(0, 0, 0, 0.14) !important;
+}
+
+.aesthetic-card-interactive {
+  background-color: var(--theme-card, #18181b);
+  border: 1px solid var(--theme-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--theme-radius, 12px);
+  transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+}
+
+.light-theme .aesthetic-card-interactive {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.09) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  color: #0f172a !important;
+}
+
+.aesthetic-card-interactive:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.light-theme .aesthetic-card-interactive:hover {
+  background-color: #f8fafc !important;
+  border-color: rgba(0, 0, 0, 0.18) !important;
+}
+
+.aesthetic-glass {
+  background-color: rgba(18, 20, 29, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--theme-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--theme-radius, 12px);
+}
+
+.light-theme .aesthetic-glass {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.aesthetic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.2rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.15s ease;
+}
+
+.aesthetic-button-primary {
+  background: var(--theme-accent, #3b82f6);
+  color: #ffffff !important;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--theme-radius, 12px);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.25), 0 4px 14px 0 rgba(0, 0, 0, 0.25);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.aesthetic-button-primary:hover {
+  filter: brightness(1.1);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.35), 0 6px 20px 0 rgba(0, 0, 0, 0.35);
+  transform: translateY(-1px);
+}
+
+.aesthetic-button-primary:active {
+  transform: translateY(0px);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.aesthetic-button-secondary {
+  background: linear-gradient(180deg, rgba(30, 36, 50, 0.8) 0%, rgba(18, 22, 32, 0.9) 100%);
+  color: #e2e8f0;
+  font-weight: 500;
+  border: 1px solid var(--theme-border, rgba(255, 255, 255, 0.09));
+  border-radius: var(--theme-radius, 12px);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.07), 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.15s ease;
+}
+
+.light-theme .aesthetic-button-secondary {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+.aesthetic-button-secondary:hover {
+  background: linear-gradient(180deg, rgba(40, 48, 66, 0.9) 0%, rgba(24, 30, 42, 0.95) 100%);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.light-theme .aesthetic-button-secondary:hover {
+  background: #f1f5f9 !important;
+  color: #000000 !important;
+  border-color: rgba(0, 0, 0, 0.18) !important;
+}
+
+/* =========================================================================
+   Apple Liquid Glass & macOS Scenic Wallpapers
+   ========================================================================= */
+
+/* Scenic Lake & Mountain Ridge Backdrop (Matching Reference Screenshot) */
+.bg-wallpaper-lake {
+  background: 
+    linear-gradient(180deg, rgba(160, 195, 230, 0.4) 0%, rgba(200, 220, 240, 0.1) 40%, rgba(60, 90, 70, 0.3) 70%, rgba(40, 60, 75, 0.6) 100%),
+    radial-gradient(ellipse at 50% 30%, #a4c8e1 0%, #7aa2c7 45%, #3d6046 80%, #20353c 100%);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.bg-wallpaper-sequoia {
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.35) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.35) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.25) 0%, transparent 70%),
+    linear-gradient(135deg, #090d16 0%, #111827 50%, #030712 100%);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.bg-wallpaper-sonoma {
+  background: 
+    radial-gradient(ellipse at 80% 20%, #fed7aa 0%, #fdba74 25%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, #93c5fd 0%, #60a5fa 30%, transparent 70%),
+    linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Authentic Apple Liquid Glass Window Surfaces */
+.liquid-glass-window {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(40px) saturate(190%);
+  -webkit-backdrop-filter: blur(40px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+}
+
+.dark .liquid-glass-window,
+[data-theme*="dark"] .liquid-glass-window {
+  background: rgba(18, 22, 32, 0.72);
+  backdrop-filter: blur(40px) saturate(190%);
+  -webkit-backdrop-filter: blur(40px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+}
+
+/* Background Pattern Utilities - Ultra Crisp & Modern */
+.bg-pattern-dots {
+  background-image: radial-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.light-theme .bg-pattern-dots {
+  background-image: radial-gradient(rgba(15, 23, 42, 0.12) 1px, transparent 1px);
+}
+
+.bg-pattern-grid {
+  background-image: 
+    linear-gradient(to right, rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.light-theme .bg-pattern-grid {
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+}
+
+.bg-pattern-crosshair {
+  background-image: 
+    radial-gradient(rgba(148, 163, 184, 0.16) 1.5px, transparent 1.5px),
+    linear-gradient(to right, rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.light-theme .bg-pattern-crosshair {
+  background-image: 
+    radial-gradient(rgba(15, 23, 42, 0.16) 1.5px, transparent 1.5px),
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+}
+
+/* Custom crisp scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.light-theme ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4);
+}
+
+.light-theme ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* =========================================================================
+   Clean, Modern macOS Elements & Fast Border Styles
+   ========================================================================= */
+
+/* Border style: Liquid / Glass variant (lean & fast) */
+.border-style-liquid-glass {
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.light-theme .border-style-liquid-glass {
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Authentic, lightweight macOS Window Header & Traffic Lights */
+.macos-traffic-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.15s ease;
+  position: relative;
+}
+
+.macos-traffic-close {
+  background-color: #ff5f56;
+}
+
+.macos-traffic-minimize {
+  background-color: #ffbd2e;
+}
+
+.macos-traffic-maximize {
+  background-color: #27c93f;
+}
+
+/* macOS Segmented Pill */
+.macos-segmented-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  padding: 3px;
+}
+
+.light-theme .macos-segmented-pill {
+  background: rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
